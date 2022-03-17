@@ -5,79 +5,120 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Curso Practico de JavaScript</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://pro.fontawesome.com/releases/v5.15.4/css/all.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer"> 
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap" rel="stylesheet">
 </head>
-<body>
-    <head>
-        <nav>
-            <a href="">
-                <img src="./recursos/javascript-map-javascript-javascript-icon-with-png-892806.png" alt="Logo de la pagina">
+<body class="body">
+    <header class="header">
+        <nav class="header-nav">
+            <div class="header-nav__buttom-menu-container" onclick="despliegueMenuList()">
+                <button class="header-nav__buttom-menu">
+                    <div class="header-nav__buttom-menu__item" style="--x:1;--y:-1;"></div>
+                    <div class="header-nav__buttom-menu__item" style="--x:1;--y:0;"></div>
+                    <div class="header-nav__buttom-menu__item" style="--x:1;--y:1;"></div>
+                </button>
+            </div>
+            <a class="header-nav__logo-container">
+                <img class="header-nav__logo" src="./recursos/javascript-map-javascript-javascript-icon-with-png-892806.png" alt="Logo de la pagina">
             </a>
-            
-            <ul>
-                <li>
-                    <a href="">
-                        <h3>
-                            TALLER#1
-                        </h3>
-                        <h2>
-                            Figuras Geometricas
-                        </h2>
-                        <p> 
-                            Calculo básicos para Cuadrados, Triangulos y Circulos.
-                        </p>
+            <ul class="header-nav__link-list-close">
+                <li style="--time-delay:1.5s;" class="header-nav__link-element">
+                    <a class="header-nav__link" href="">
+                        <div class="header-nav__link__icons-container">
+                            <i class="fal fa-triangle header-nav__link__icons"></i>
+                            <i class="fal fa-circle header-nav__link__icons"></i>
+                            <i class="fal fa-square-full header-nav__link__icons"></i>
+                        </div>
+                        <div class="header-nav__link-contents">
+                            <h3 class="header-nav__link__subtitle">
+                                TALLER#1
+                            </h3>
+                            <h2 class="header-nav__link__title">
+                                Figuras Geometricas
+                            </h2>
+                            <p class="header-nav__link__paragraph" >
+                                Calculo básicos para Cuadrados, Triangulos y Circulos.
+                            </p>
+                        </div>
                     </a>
                 </li>
-                <li>
-                    <a href="">
-                        <h3>
-                            TALLER#2
-                        </h3>
-                        <h2>
-                            Porcentajes y descuentos
-                        </h2>
-                        <p>
-                            Calculo básicos para precios, descuentos y cupones de pago.
-                        </p>
+                <li style="--time-delay:2s;" class="header-nav__link-element">
+                    <a class="header-nav__link" href="">
+                        <div class="header-nav__link__icons-container">
+                            <i class="fal fa-user-tag header-nav__link__icons"></i>
+                            <i class="fal fa-badge-dollar header-nav__link__icons"></i>
+                            <i class="fal fa-badge-percent header-nav__link__icons"></i>
+                        </div>
+                        <div class="header-nav__link-contents">
+                            <h3 class="header-nav__link__subtitle">
+                                TALLER#2
+                            </h3>
+                            <h2 class="header-nav__link__title">
+                                Porcentajes y descuentos
+                            </h2>
+                            <p class="header-nav__link__paragraph">
+                                Calculo básicos para precios, descuentos y cupones de pago.
+                            </p>
+                        </div>
                     </a>
                 </li>
-                <li>
-                    <a href="">
-                        <h3>
-                            TALLER#3
-                        </h3>
-                        <h2>
-                            Media, Moda y Mediana
-                        </h2>
-                        <p>
-                            Calculos básicos y avanzados.
-                        </p>
+                <li style="--time-delay:2.5s;" class="header-nav__link-element">
+                    <a class="header-nav__link" href="">
+                        <div class="header-nav__link__icons-container">
+                            <i class="fal fa-table header-nav__link__icons"></i>
+                            <i class="fal fa-tachometer-average header-nav__link__icons"></i>
+                            <i class="fal fa-divide header-nav__link__icons"></i>
+                        </div>
+                        <div class="header-nav__link-contents">
+                            <h3 class="header-nav__link__subtitle">
+                                TALLER#3
+                            </h3>
+                            <h2 class="header-nav__link__title">
+                                Media, Moda y Mediana
+                            </h2>
+                            <p class="header-nav__link__paragraph">
+                                Calculos básicos y avanzados.
+                            </p>
+                        </div>
                     </a>
                 </li>
-                <li>
-                    <a href="">
-                        <h3>
-                            TALLER#4
-                        </h3>
-                        <h2>
-                            Análisis Salarial
-                        </h2>
-                        <p>
-                            Calculo básicos para trabajar con Salarios (medianas y top 10%).
-                        </p>
+                <li style="--time-delay:3s;" class="header-nav__link-element">
+                    <a class="header-nav__link" href="">
+                        <div class="header-nav__link__icons-container">
+                            <i class="fas fa-people-carry header-nav__link__icons"></i>
+                            <i class="fal fa-analytics header-nav__link__icons"></i>
+                            <i class="fal fa-sack-dollar header-nav__link__icons"></i>
+                        </div>
+                        <div class="header-nav__link-contents">
+                            <h3 class="header-nav__link__subtitle">
+                                TALLER#4
+                            </h3>
+                            <h2 class="header-nav__link__title">
+                                Análisis Salarial
+                            </h2>
+                            <p class="header-nav__link__paragraph">
+                                Calculo básicos para trabajar con Salarios.
+                            </p>
+                        </div>
                     </a>
                 </li>
             </ul>
         </nav>  
-    </head>
-    <main>
-        <section>
-            <h2>
+    </header>
+    <main class="main">
+        <section class="main-hero">
+            <h2 class="hero__subtitle">
                 TRABAJO PRÁCTICO - PLATZI
             </h2>
-            <h1>
+            <h1 class="hero__title">
                 Curso Práctico de JavaScript
             </h1>
-            <p>
+            <p class="hero__pragraph">
                 Aprende desarrollo web con JavaScript. 
                 Practica los fundamentos de la programación 
                 para crear algoritmos que resuelven problemas
@@ -87,48 +128,63 @@
                 de programar sitios web con JavaScript 
                 con tu profesor JuanDC.
             </p>
-            <span>
+            <span class="hero__table-title">
                 Temas vistos en el curso:
             </span>
            
-            <ul>
-                <li>
+            <ul class="hero__table-container">
+                <li class="hero__table-element">
                     Manipulación del DOM
                 </li>
-                <li>
+                <li class="hero__table-element">
                     Manipulación de Array
                 </li>
-                <li>
+                <li class="hero__table-element">
                     Functions
                 </li>
-                <li>
+                <li class="hero__table-element">
                     HTML y CSS
                 </li>
-                <li>
+                <li class="hero__table-element">
                     Animaciones y transiciones
                 </li>
             </ul>
         </section>
     </main>
-    <footer>
-        <div>
-            <address>
-                <h3>
-                    Information Page
+    <footer class="footer">
+        <div class="info-container">
+            <section class="info-page-container">
+                <h3 class="info-page__title">
+                    Información del la Página
                 </h3>
-                <p>
-
+                <p class="info-page__paragraph">
+                    Esta págian contine proyectos realizados en las clases dadas en el Curso Práctico de JavaScript.
                 </p>
-            </address>
-            <address>
-                <div></div>
-                <div></div>
-                <div></div>
-            </address>
-            <address>
-
-            </address>
+            </section>
+            <section class="info-social-container">
+                <h3 class="info-social__title">Redes Sociales</h3>
+                <div class="info-social__media">
+                    <i class="fab fa-linkedin info-social__media-icon"></i>
+                    Sigueme en Linkedin
+                </div>
+                <div class="info-social__media">
+                    <i class="fab fa-instagram-square info-social__media-icon"></i>
+                    Sigueme en Instagram
+                </div>
+                <div class="info-social__media">
+                    <i class="fab fa-facebook-square info-social__media-icon"></i> 
+                    Sigueme en Facebook
+                </div>
+            </section>
+            <section class="info-contact-container">
+                <h3 class="info-contact__title">Contactame</h3>
+                <div class="info-contact__cellphone">
+                    <i class="fas fa-phone-square-alt info-contact__cellphone-icon"></i>
+                    915136790
+                </div>    
+            </section>
         </div>
     </footer>
+    <script src="./script.js"></script>
 </body>
 </html>
