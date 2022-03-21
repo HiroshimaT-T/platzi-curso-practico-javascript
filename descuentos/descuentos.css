@@ -1,0 +1,597 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Titillium Web', sans-serif;
+    -webkit-tap-highlight-color: transparent;
+}
+.body {
+    width: 100%;
+    min-height: 100vh;
+    background-color: rgb(255, 255, 255);
+    display: grid;
+    grid-template-areas: 
+    "main"
+    "footer";
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+}
+@keyframes translate-background-header {
+    0%{
+        background-position: 0px;
+    }
+    100% {
+        background-position: 100px;
+    }
+}
+.header {
+    width: 100%;
+    background: rgb(44, 42, 42);
+    /* background: linear-gradient(90deg,   rgb(72, 219, 151) 25%, rgb(0, 30, 48) 25% ,  rgb(0, 30, 48) 50%, rgb(72, 219, 151) 50%, rgb(72, 219, 151) 75%, rgb(0, 30, 48)75%, rgb(0, 30, 48) 100%);
+    background-size: 100px 100px;
+    animation-name: translate-background-header;
+    animation-delay: 0s;
+    animation-timing-function: linear;
+    animation-fill-mode: none;
+    animation-iteration-count: infinite;
+    animation-duration: 1s;
+    animation-direction: normal; */
+    position: fixed;
+    top: 0;
+    z-index: 999999;
+}
+.header--scroll {
+    box-shadow: 0 0 5px 0 black;
+}
+.header-nav {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    padding: 0.3rem 0.5rem;
+    backdrop-filter: blur(0.5rem);
+}
+.header-nav__logo-container {
+    width: 3rem;
+}
+.header-nav__logo {
+    width: 100%;
+}
+.header-nav__buttom-menu-container {
+    display: flex;
+    align-items: center;
+    
+}
+.header-nav__buttom-menu {
+    border: none;
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color:gold;
+    filter: drop-shadow(0 0 5px rgb(62, 65, 63));
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.25rem;
+    cursor: pointer;
+}
+.header-nav__buttom-menu-filter {
+    scale: 1.1;
+    background-color:rgb(75, 75, 75);
+}
+.header-nav__buttom-menu__item {
+    width: 1.7rem;
+    height: 0.28rem;
+    background: rgb(44, 42, 42);
+    position: absolute;
+    border-radius: 0.5rem;
+    transform:  translateY(calc(var(--y) * 10px));
+    transition: box-shadow 0.5s , border-radius 0.5s , width 0.5s , height 0.5s , filter 0.5s;
+
+}
+.header-nav__buttom-menu__item-filter {
+    width: 0.5rem ;
+    height: 0.5rem ;
+    background: gold;
+    filter: drop-shadow(0 0 5px gold);
+    box-shadow:10px 0px 0 0  rgb(44, 42, 42),
+    -10px  0px 0 0  rgb(44, 42, 42);
+    transition-delay:1s, 1s , 0s ,  0.5s ,  1.5s;
+}
+.header-nav__buttom-menu__item-filter:nth-child(2) {
+    background: rgb(44, 42, 42);
+    box-shadow:10px 0px 0 0 gold ,
+    -10px  0px 0 0 gold;
+}
+.header-nav__link-list-close {
+    display: grid;
+    position: absolute;
+    flex-direction: column;
+    top: 63.59px;
+    background-color: transparent;
+    left: 0;
+    transform: translateX(-101%);
+    grid-template-areas: 
+    "taller1"
+    "taller2"
+    "taller3"
+    "taller4";
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    width: 100%;
+    transition: all 0.5s;
+}
+.header-nav__link-list-open {
+    transform: translateX(0%);
+}
+.header-nav__link-element {
+    list-style: none;
+    display: flex;
+    background-color: gold;
+    padding: 0.9rem 0.5rem;
+    box-sizing: border-box;
+    align-items: center;
+    box-shadow: 0 0 0 0.1rem  rgb(44, 42, 42);
+    width: 100%;
+    transition: var(--time-delay);
+    transition-timing-function: ease-in-out;
+}
+.header-nav__link-element:nth-child(1) {
+    transform: translateX(-100%);
+    
+}
+.header-nav__link-element:nth-child(2) {
+    transform: translateX(-100%);
+   
+}
+.header-nav__link-element:nth-child(3) {
+    transform: translateX(-100%);
+  
+}
+.header-nav__link-element:nth-child(4) {
+    transform: translateX(-100%);
+ 
+}
+.header-nav__link-list-open .header-nav__link-element:nth-child(1) {
+    transform: translateX(0%);
+    
+}
+.header-nav__link-list-open .header-nav__link-element:nth-child(2) {
+    transform: translateX(0%);
+}
+.header-nav__link-list-open .header-nav__link-element:nth-child(3) {
+    transform: translateX(0%);
+}
+.header-nav__link-list-open .header-nav__link-element:nth-child(4) {
+    transform: translateX(0%);
+}
+.header-nav__link-list-open .header-nav__link-element {
+    transition-timing-function: cubic-bezier(0.48, -1.63, 0.42, 2.63);
+}
+.header-nav__link {
+    text-decoration: none;
+    display: grid;
+    grid-template-areas: 
+    "link-icon link-info";
+    grid-template-columns: 85px auto;
+    grid-template-rows: 1fr;
+    gap: 0.3rem;
+}
+.header-nav__link__icons-container {
+    grid-area: link-icon;
+    display: grid;
+    grid-template-areas: 
+    "link-icon1 link-icon1"
+    "link-icon3 link-icon2";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 0.2rem;
+}
+.header-nav__link__icons:first-child {
+    grid-area: link-icon1;    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.header-nav__link__icons:nth-child(2) {
+    grid-area: link-icon2;
+    align-items: flex-start;
+ 
+}
+.header-nav__link__icons:last-child {
+    grid-area: link-icon3;
+    align-items: flex-start;
+    display: flex;
+    justify-content: center;
+}
+.header-nav__link__icons {
+    font-size: 2.2rem;
+    color:rgb(44, 42, 42);
+}
+
+.header-nav__link-contents {
+    grid-area: link-info;
+    display: flex;
+    flex-direction: column;
+}
+.header-nav__link__subtitle {
+    color: rgb(44, 42, 42);
+    font-size: 1rem;
+    letter-spacing: 1px;
+    line-height: 1rem;
+}
+.header-nav__link__title {
+    color: rgb(44, 42, 42);
+    font-size: 1.3rem;
+}
+.header-nav__link__paragraph {
+    color: rgb(44, 42, 42);
+    font-size: 0.84rem;
+}
+/*? ----------------------------Main------------------------- */
+.main{
+    grid-area: main;
+    padding: 68px 1rem 1rem 1Rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.descuento-container{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+.main__tile{
+    font-size: 1.5rem;
+    font-weight:900;
+    line-height: 1.9rem;
+    text-transform: uppercase;
+}
+.descuento__caluladora-title{
+    font-size: 1rem; 
+    color: rgb(37, 37, 37);
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    position: relative;
+    margin-left: 5px;
+}
+.descuento__caluladora-title::after {
+    content: "";
+    position: absolute;
+    width: 0.5rem;
+    height: 0.5rem;
+    background-color: rgb(49, 48, 48);
+    top: 50%;
+    transform: translateY(-50%);
+    left: -10px;
+
+}
+/*? ----------------------------Main-Inputs-Calculadora------------------------- */
+.descuento__caluladora1-container{
+    display: flex;
+    flex-direction: column;
+}
+.descuento__caluladora-contents{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgb(44, 42, 42);
+    /* linear-gradient(120deg,rgba(253, 75, 5, 0.733), rgba(255, 217, 0, 0.623) 75%); */
+    border-radius: 1.5rem;
+    padding: 1rem 1rem 1.5rem 1rem;
+    color: white;
+    gap: 0.5rem;
+    position: relative;
+    overflow: hidden;
+}
+.caluladora-contents__info-input{
+    margin-top: 0.5rem;
+}
+.caluladora-contents__input-contents {
+    display: flex;
+
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+input[type=number] { -moz-appearance:textfield; }
+.caluladora-contents__input{
+    width: 4rem;
+    border: none;
+    padding: 0.2rem 0.5rem 0.2rem 0.2rem;
+}
+#InputDiscountCupon {
+    width: 6rem;
+}
+.caluladora-contents__input:focus-visible {
+    outline: none;
+}
+.caluladora-contents__input-simbolo {
+    width: min-content;
+    color: black;
+    background: #ffffff;
+    border: none;
+    font-size: 0.9rem;
+    padding: 0.09rem 0.1rem 0.1rem 0.5rem;
+    border-radius: 0.2rem 0 0 0.2rem;
+    line-height: 1.5rem;
+}
+.caluladora-contents__input-select-simbolo {
+    color: black;
+    background: url(//ssl.gstatic.com/ui/v1/disclosure/grey-disclosure-arrow-up-down.png) 100% no-repeat #ffffff;
+    background-position: 90% 50%;
+    border:none;
+    border-top-right-radius: 0.2rem;
+    border-bottom-right-radius: 0.2rem;
+    font-size: 0.9rem;
+    text-align: center;
+    padding: 0.09rem 1rem 0.1rem 0rem;
+    vertical-align: middle;
+    line-height: 1.37rem;
+    -webkit-appearance: none;
+    appearance: none;
+    width: min-content;
+}
+.caluladora-contents__input-select-simbolo:focus-visible {
+    outline: none;
+
+}
+.caluladora-contents__button{
+    margin-top: 1rem;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    border: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    box-shadow: 0px 0px  2px 0 white;
+    background: rgb(44, 42, 42);
+    color: white;
+    letter-spacing: 1px;
+}
+.caluladora-contents__resultado{
+    background: rgb(245, 107, 107);
+    border-radius: 0.5rem;
+    padding: 0.7rem;
+    margin-top: 1rem;
+    display: none;
+    color: black;
+
+
+}
+#InputDiscount {
+border-radius: 0.2rem;
+}
+#InputDiscountCupon {
+border-radius: 0.2rem;
+}
+.descuento__caluladora2-container {
+    display: flex;
+    flex-direction: column;
+}
+/*? ----------------------------Main-Inputs-Calculadora------------------------- */
+/*? ----------------------------Main-List-Cupón------------------------- */
+.calculadora__cupon-list{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    background-color: #e03451fd;
+    padding: 1rem;
+    margin-top: 1rem;
+    border-radius: 0.5rem;
+    
+
+}
+.calculadora__cupon-list-title{
+    text-transform: uppercase;
+    list-style: none;
+    font-size: 1.3rem;
+    font-weight: bolder;
+    color: rgb(48, 45, 45);
+}
+.fa-car-battery {
+    font-size: 1.8rem;
+    position: relative;
+    top: 0.1rem;
+}
+.calculadora__cupon{
+    list-style: none;
+    width: 100%;
+    display: grid;
+    grid-template-areas: 
+    "list-cupon-order list-cupon-info list-cupon-icon";
+    grid-template-rows: auto;
+    grid-template-columns: min-content 1fr min-content;
+    background-color: rgba(255,255,255,0.1);
+    color: rgb(44, 42, 42);
+    font-weight: 700;
+    padding: 0.2rem 1rem;
+    box-sizing: border-box;
+    box-shadow: 0 2px 5px 0 rgba(243, 219, 233, 0.281);
+   
+}
+.calculadora__cupon-list li:first-child {
+    background-color: transparent;
+}
+.calculadora__cupon-list li:nth-child(2) {
+    background-color: rgba(255,255,255,0.6);
+}
+.calculadora__cupon-list li:nth-child(3) {
+    background-color: rgba(255,255,255,0.4);
+}
+.calculadora__cupon-list li:nth-child(4) {
+    background-color: rgba(255,255,255,0.2);
+}
+.calculadora__cupon-ordered {
+    grid-area: list-cupon-order;
+    align-self: center;
+    font-size: 1.2rem;
+  
+}
+.calculadora__cupon-info {
+    grid-area: list-cupon-info;
+    text-align: center;
+}
+.calculadora__cupon-icon {
+    grid-area: list-cupon-icon;
+    align-self: center;
+    font-size: 1.7rem;
+    color: rgb(248, 211, 0);
+    
+}
+.calculadora__cupon-iconB {
+    padding-right: 0.2rem;
+    color: rgb(27, 25, 25);
+}
+/*? ----------------------------Main-List-Cupón------------------------- */
+/*? ----------------------------Main-Alert-Cupón------------------------- */
+.alert__cupon-container--no-valid , .alert__cupon-container--valid{
+    position: absolute;
+    display: grid;
+    pointer-events: none;
+    background-color: rgb(245, 107, 107);
+    border-radius: 0.5rem;
+    grid-template-areas: 
+    "alert-title"
+    "alert-list"
+    "alert-paragraph";
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    width: 17rem;
+    left: 50%;
+    transform: translateX(-50%) translateY(-200%);
+    padding: 1rem;
+    top: 50%;
+    color: black;
+    box-shadow: 0 0 0 3px rgb(44, 43, 43);
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.5s , transform 0.5s;
+    transition-delay: 0.5s , 0;
+
+}
+.alert__cupon-button{
+    
+    display: flex;
+    font-size: 2rem;
+    color: rgb(194, 36, 36);
+    align-self: end;
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    
+}
+.alert-cupon__title{
+    grid-area: alert-title;
+    font-size: 1.1rem;
+}
+.alert-cupon__valores-list-container {
+    grid-area: alert-list;
+    display: flex;
+    justify-content: center;
+}
+.alert-cupon__valores-list {
+    
+    display: flex;
+    flex-direction: column;
+    width: max-content;
+    align-items: flex-start;
+    
+}
+.alert-cupon__valores-element {
+  list-style: square;  
+}
+.alert-cupon__paragraph{
+    grid-area: alert-paragraph;
+    font-size: 1rem;
+    font-weight: 900;
+}
+/*? ----------------------------Main-Alert-Cupón------------------------- */
+/*? ----------------Footer------------------------ */
+.footer {
+    grid-area: footer;
+    background-color: black;
+}
+
+.footer-addres {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.info-container {
+    color: rgb(207, 207, 207);
+    display: grid;
+    padding: 1rem 0.5rem;
+    grid-template-areas: 
+    "info-page"
+    "info-social"
+    "info-contact";
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 1rem;
+}
+.info-page-container , .info-social-container , .info-contact-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.info-page-container {
+    grid-area: info-page;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.info-social-container {
+    grid-area: info-social;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.info-contact-container {
+    grid-area: info-contact;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+}
+.info-page__title , .info-social__title , .info-contact__title{
+    font-size: 1.5rem;
+}
+.info-page__paragraph {
+    font-size: 1rem;
+}
+.info-social__media {
+    font-size: 1rem;
+    display: flex;
+    gap: 0.2rem;
+    align-items: center;
+}
+.info-social__media-icon {
+    font-size: 2rem;
+}
+.info-social__media:nth-child(2) .info-social__media-icon {
+    color: rgb(255, 230, 0);
+}
+.info-social__media:nth-child(3) .info-social__media-icon {
+    color: rgb(252, 56, 98);
+}
+.info-social__media:last-child .info-social__media-icon {
+    color: rgb(25, 100, 238);
+}
+.info-contact__cellphone {
+    font-size: 1rem;
+    display: flex;
+    gap: 0.2rem;
+    align-items: center;
+}
+.info-contact__cellphone-icon {
+    font-size: 2rem;
+    color: rgb(5, 177, 28);
+    
+}

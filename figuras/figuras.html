@@ -5,46 +5,356 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Figuras Geométricas | Curso Prático de JavaScript en Platzi</title>
+    <link rel="stylesheet" href="./figuras.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://pro.fontawesome.com/releases/v5.15.4/css/all.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer"> 
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <h1>Figuras Geométricas</h1>
-        <p>Este es el primer taller del curso práctico de JavaScript.</p>
+    <header class="header">
+        <nav class="header-nav">
+            <div class="header-nav__buttom-menu-container" onclick="despliegueMenuList()">
+                <button class="header-nav__buttom-menu">
+                    <div class="header-nav__buttom-menu__item" style="--x:1;--y:-1;"></div>
+                    <div class="header-nav__buttom-menu__item" style="--x:1;--y:0;"></div>
+                    <div class="header-nav__buttom-menu__item" style="--x:1;--y:1;"></div>
+                </button>
+            </div>
+            <a href="../index.html" class="header-nav__logo-container">
+                <img class="header-nav__logo" src="../recursos/javascript-map-javascript-javascript-icon-with-png-892806.png" alt="Logo de la pagina">
+            </a>
+            <ul class="header-nav__link-list-close">
+                <li style="--time-delay:1.5s;" class="header-nav__link-element">
+                    <a class="header-nav__link" href="./figuras.html">
+                        <div class="header-nav__link__icons-container">
+                            <i class="fal fa-triangle header-nav__link__icons"></i>
+                            <i class="fal fa-circle header-nav__link__icons"></i>
+                            <i class="fal fa-square-full header-nav__link__icons"></i>
+                        </div>
+                        <div class="header-nav__link-contents">
+                            <h3 class="header-nav__link__subtitle">
+                                TALLER#1
+                            </h3>
+                            <h2 class="header-nav__link__title">
+                                Figuras Geometricas
+                            </h2>
+                            <p class="header-nav__link__paragraph" >
+                                Calculo básicos para Cuadrados, Triangulos y Circulos.
+                            </p>
+                        </div>
+                    </a>
+                </li>
+                <li style="--time-delay:2s;" class="header-nav__link-element">
+                    <a class="header-nav__link" href="../descuentos/descuentos.html">
+                        <div class="header-nav__link__icons-container">
+                            <i class="fal fa-user-tag header-nav__link__icons"></i>
+                            <i class="fal fa-badge-dollar header-nav__link__icons"></i>
+                            <i class="fal fa-badge-percent header-nav__link__icons"></i>
+                        </div>
+                        <div class="header-nav__link-contents">
+                            <h3 class="header-nav__link__subtitle">
+                                TALLER#2
+                            </h3>
+                            <h2 class="header-nav__link__title">
+                                Porcentajes y descuentos
+                            </h2>
+                            <p class="header-nav__link__paragraph">
+                                Calculo básicos para precios, descuentos y cupones de pago.
+                            </p>
+                        </div>
+                    </a>
+                </li>
+                <li style="--time-delay:2.5s;" class="header-nav__link-element">
+                    <a class="header-nav__link" href="../promedio/promedio.html">
+                        <div class="header-nav__link__icons-container">
+                            <i class="fal fa-table header-nav__link__icons"></i>
+                            <i class="fal fa-tachometer-average header-nav__link__icons"></i>
+                            <i class="fal fa-divide header-nav__link__icons"></i>
+                        </div>
+                        <div class="header-nav__link-contents">
+                            <h3 class="header-nav__link__subtitle">
+                                TALLER#3
+                            </h3>
+                            <h2 class="header-nav__link__title">
+                                Media, Moda y Mediana
+                            </h2>
+                            <p class="header-nav__link__paragraph">
+                                Calculos básicos y avanzados.
+                            </p>
+                        </div>
+                    </a>
+                </li>
+                <li style="--time-delay:3s;" class="header-nav__link-element">
+                    <a class="header-nav__link" href="../salarios/salarios.html">
+                        <div class="header-nav__link__icons-container">
+                            <i class="fas fa-people-carry header-nav__link__icons"></i>
+                            <i class="fal fa-analytics header-nav__link__icons"></i>
+                            <i class="fal fa-sack-dollar header-nav__link__icons"></i>
+                        </div>
+                        <div class="header-nav__link-contents">
+                            <h3 class="header-nav__link__subtitle">
+                                TALLER#4
+                            </h3>
+                            <h2 class="header-nav__link__title">
+                                Análisis Salarial
+                            </h2>
+                            <p class="header-nav__link__paragraph">
+                                Calculo básicos para trabajar con Salarios.
+                            </p>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </nav>  
     </header>
-    <main>
-        <section>
-            <h2>Calcula el perimetro y el área de un cuadrado</h2>
-            <form action="">
-                <label for="InputCuadrado">Escribe cuanto mide el lado del cuadrado.</label>
-                <input type="number" name="" id="InputCuadrado">
-                <button type="button" onclick="cálculaPerimetroCuadrado()">Cálcula el perimetro</button>
-                <button type="button" onclick="cálculaÁreaCuadrado()">Cálcula el área</button>
-            </form>
+    <main class="main">
+        <h1 class="main__title">Figuras Geométricas</h1>
+        <!--? ------------------------------------------Section1-------------------------------------------- -->
+        <section class="figure-container">
+            <h2 class="figure__subtitle">Calcula el perimetro y el área de un cuadrado</h2>
+            <div style="--clr:rgb(255, 0, 106);" class="figure__calculation-container">
+                <form action="" class="figure__calculation-form">
+                    <label class="calculation__info" for="InputCuadrado">Escribe el valor de "a":</label>
+                    <div>
+                        <input class="calculation__valor" type="number" name="" id="InputCuadrado">
+                        <select class="calculation__valor-medida" id="SelectCuadrado" >  
+                            <option>km</option>
+                            <option>m</option>
+                            <option selected="1">cm</option>
+                            <option>mn</option>
+                            <option>mi</option>
+                            <option>yd</option>
+                            <option>ft</option>
+                            <option>in</option>
+                        </select>
+                    </div>
+                    
+                    <div class="calculation__figure-cuvo-3d">
+                         <div class="calculation__figure-cuvo-3d-element"></div>
+                         <div class="calculation__figure-cuvo-3d-element"></div>
+                         <div class="calculation__figure-cuvo-3d-element"></div>
+                    </div>
+                </form>
+                <div class="figure__cuadrado-container">
+                    <div class="figure__cuadrado">
+                        <span class="figure__cuadrado-element">a</span>
+                        <span class="figure__cuadrado-element">a</span>
+                        <span class="figure__cuadrado-element">a</span>
+                        <span class="figure__cuadrado-element">a</span>
+                    </div>
+                </div>
+                <div class="figure__calculation-button-container">
+                    <span class="figure__calculation-button-info">Calcular:</span>
+                    <button class="figure__calculation-button figure__calculation-button-perimetro" type="button" onclick="cálculaPerimetroCuadrado()">Perimetro</button>
+                    <button class="figure__calculation-button figure__calculation-button-area" type="button" onclick="cálculaÁreaCuadrado()">Área</button>
+                </div>
+                <p class="figure__resultado figure__resultado-cuadrado">
+
+                </p>
+            </div>
         </section>
-        <section>
-            <h2>Calcula el perimetro y el área de un triángulo</h2>
-            <form action="">
-                <label for="InputTrianguloLado1">Escrive cuanto mide el primer lado del triangulo.</label>
-                <input type="number" name="" id="InputTrianguloLado1">
-                <label for="InputTrianguloLado2">Escrive cuanto mide el segundo lado del triangulo.</label>
-                <input type="number" name="" id="InputTrianguloLado2">
-                <label for="InputTrianguloBase">Escrive cuanto mide la base del triangulo.</label>
-                <input type="number" name="" id="InputTrianguloBase">
-                <button type="button" onclick="cálculaPerimetroTriangulo()">Cálcula el perimetro</button>
-                <button type="button" onclick="cálculaÁreaTriangulo()">Cálcula el área</button>
-                <button type="button" onclick="cálculaAlturaTriangulo()">Cálcula el la altura</button>
-            </form>
+        <!--? ------------------------------------------Section2-------------------------------------------- -->
+        <section class="figure-container">
+            <h2 class="figure__subtitle">Calcula el perimetro y el área de un rectangulo</h2>
+            <div style="--clr:rgb(255, 60, 0);" class="figure__calculation-container figure2__calculation-container">
+                <form action="" class="figure__calculation-form">
+                    <label class="calculation__info" for="InputLadoARectangulo">Escribe el valor de "a":</label>
+                    <div>
+                        <input class="calculation__valor" type="number" name="" id="InputLadoARectangulo">
+                        <select class="calculation__valor-medida" id="Select1Rectangulo" >  
+                            <option>km</option>
+                            <option>m</option>
+                            <option selected="1">cm</option>
+                            <option>mn</option>
+                            <option>mi</option>
+                            <option>yd</option>
+                            <option>ft</option>
+                            <option>in</option>
+                        </select>
+                    </div>
+
+                    <label class="calculation__info" for="InputLadoBRectangulo">Escribe el valor de "b":</label>
+                    <div>
+                        <input class="calculation__valor" type="number" name="" id="InputLadoBRectangulo">
+                        <span class="calculation__valor-medida-equalize" id="Select2Rectangulo"></span>
+                    </div>
+
+                    <div class="calculation__figure-prisma-3d">
+                         <div class="calculation__figure-prisma-3d-element"></div>
+                         <div class="calculation__figure-prisma-3d-element"></div>
+                         <div class="calculation__figure-prisma-3d-element"></div>
+                    </div>
+                </form>
+                <div class="figure__rectangulo-container">
+                    <div class="figure__rectangulo">
+                        <span class="figure__rectangulo-element">b</span>
+                        <span class="figure__rectangulo-element">a</span>
+                        <span class="figure__rectangulo-element">a</span>
+                        <span class="figure__rectangulo-element">b</span>
+                    </div>
+                </div>
+                <div class="figure__calculation-button-container figure2__calculation-button-container">
+                    <span class="figure__calculation-button-info">Calcular:</span>
+                    <button class="figure__calculation-button figure2__calculation-button figure__calculation-button-perimetro" type="button" onclick="cálculaPerimetroRectangulo()">Perimetro</button>
+                    <button class="figure__calculation-button figure2__calculation-button figure__calculation-button-area" type="button" onclick="cálculaÁreaRectangulo()">Área</button>
+                </div>
+                <p class="figure__resultado figure__resultado-rectangulo">
+
+                </p>
+            </div>  
         </section>
-        <section>
-            <h2>Calcula el perimetro y el área de un circulo</h2>
-            <form action="">
-                <label for="InputCirculo">Escribe cuanto midel el radio del circulo.</label>
-                <input type="number" name="" id="InputCirculo">
-                <button type="button" onclick="cálculaCircunferenciaCirculo()">Cálcula el perimetro</button>
-                <button type="button" onclick="cálculaÁreaCirculo()">Cálcula el área</button>
-            </form>
+        <!--? ------------------------------------------Section3-------------------------------------------- -->
+        <section class="figure-container">
+            <h2 class="figure__subtitle">Calcula el perimetro y el área de un triángulo</h2>
+            <div style="--clr:rgb(0, 225, 255);" class="figure__calculation-container figure3__calculation-container">
+                <form action="" class="figure__calculation-form">
+                    <label class="calculation__info" for="InputTrianguloLado1">Valor de "a":</label>
+                    <div>
+                        <input class="calculation__valor" type="number" name="" id="InputTrianguloLado1">
+                        <select class="calculation__valor-medida" id="Select1Triangulo" >  
+                            <option>km</option>
+                            <option>m</option>
+                            <option selected="1">cm</option>
+                            <option>mn</option>
+                            <option>mi</option>
+                            <option>yd</option>
+                            <option>ft</option>
+                            <option>in</option>
+                        </select>
+                    </div>
+        
+                    <label class="calculation__info" for="InputTrianguloLado2">Valor de "b":</label>
+                    <div>
+                        <input class="calculation__valor" type="number" name="" id="InputTrianguloLado2">
+                        <span class="calculation__valor-medida-equalize" id="Select2Triangulo"></span>
+                    </div>
+    
+                    <label class="calculation__info" for="InputTrianguloBase">Valor de "c":</label>
+                    <div>
+                        <input class="calculation__valor" type="number" name="" id="InputTrianguloBase">
+                        <span class="calculation__valor-medida-equalize" id="Select3Triangulo"></span>
+                    </div>
+                    
+                    <div class="calculation__figure-piramide-3d">
+                        <div class="calculation__figure-piramide-3d-element"></div>
+                        <div class="calculation__figure-piramide-3d-element"></div>
+                        <div class="calculation__figure-piramide-3d-element"></div>
+                        <div class="calculation__figure-piramide-3d-element"></div>
+                        <div class="calculation__figure-piramide-3d-element"></div>
+                    </div>
+
+                </form>
+                <div class="figure__triangulo-container">
+                    <div class="figure__triangulo">
+                        <span class="figure__triangulo-element">a</span>
+                        <span class="figure__triangulo-element">c</span>
+                        <span class="figure__triangulo-element">b</span>
+                    </div>
+                </div>
+                <div class="figure__calculation-button-container figure3__calculation-button-container">
+                    <span class="figure__calculation-button-info">Calcular:</span>
+                    <button class="figure__calculation-button figure3__calculation-button figure__calculation-button-perimetro" type="button" onclick="cálculaPerimetroTriangulo()">Perimetro</button>
+                    <button class="figure__calculation-button figure3__calculation-button figure__calculation-button-area" type="button" onclick="cálculaÁreaTriangulo()">Área</button>
+                    <button class="figure__calculation-button figure3__calculation-button figure__calculation-button-altura" type="button" onclick="cálculaAlturaTriangulo()">Áltura</button>
+                </div>
+                <p class="figure__resultado figure__resultado-triangulo">
+
+                </p>
+            </div>
         </section>
+        <!--? ------------------------------------------Section4-------------------------------------------- -->
+        <section class="figure-container">
+            <h2 class="figure__subtitle">Calcula el perimetro y el área de un circulo</h2>
+            <div style="--clr:rgb(0, 245, 94);" class="figure__calculation-container figure4__calculation-container">
+                <form action="" class="figure__calculation-form">
+                    <label class="calculation__info" for="InputCirculo">Valor de "r":</label>
+                    <div>
+                        <input class="calculation__valor" type="number" name="" id="InputCirculo">
+                        <select class="calculation__valor-medida" id="SelectCirculo" >  
+                            <option>km</option>
+                            <option>m</option>
+                            <option selected="1">cm</option>
+                            <option>mn</option>
+                            <option>mi</option>
+                            <option>yd</option>
+                            <option>ft</option>
+                            <option>in</option>
+                        </select>
+                    </div>
+                    <div class="calculation__figure-esfera-3d-container">
+                        <div class="calculation__figure-esfera-3d-fijo">
+                        </div>
+                        <div class="calculation__figure-esfera-3d">
+                            <div class="calculation__figure-esfera-3d-element"></div>
+                            <div class="calculation__figure-esfera-3d-element"></div>
+                            <div class="calculation__figure-esfera-3d-element"></div>
+                            <div class="calculation__figure-esfera-3d-element"></div>
+                            <div class="calculation__figure-esfera-3d-element"></div>
+                            <div class="calculation__figure-esfera-3d-element"></div>
+                            <div class="calculation__figure-esfera-3d-element"></div>
+                            <div class="calculation__figure-esfera-3d-element"></div>
+                            <div class="calculation__figure-esfera-3d-element"></div>
+                            <div class="calculation__figure-esfera-3d-element"></div>
+                            <div class="calculation__figure-esfera-3d-element"></div>
+                            <div class="calculation__figure-esfera-3d-element"></div>
+                            <div class="calculation__figure-esfera-3d-element"></div>
+                        </div>
+                    </div>
+                </form>
+                <div class="figure__circulo-container">
+                    <div class="figure__circulo">
+                        <span class="figure__circulo-element">r</span>
+                    </div>
+                </div>
+                <div class="figure__calculation-button-container figure4__calculation-button-container">
+                    <span class="figure__calculation-button-info">Calcular:</span>
+                    <button class="figure__calculation-button figure4__calculation-button figure__calculation-button-perimetro" type="button" onclick="cálculaCircunferenciaCirculo()">Perimetro</button>
+                    <button class="figure__calculation-button figure4__calculation-button figure__calculation-button-area" type="button" onclick="cálculaÁreaCirculo()">Área</button>
+                </div>
+                <p class="figure__resultado figure__resultado-circulo">
+
+                </p>
+            </div>
+        </section>
+
     </main>
+    <footer class="footer">
+        <div class="info-container">
+            <section class="info-page-container">
+                <h3 class="info-page__title">
+                    Información del la Página
+                </h3>
+                <p class="info-page__paragraph">
+                    Esta págian contine proyectos realizados en las clases dadas en el Curso Práctico de JavaScript.
+                </p>
+            </section>
+            <section class="info-social-container">
+                <h3 class="info-social__title">Redes Sociales</h3>
+                <div class="info-social__media">
+                    <i class="fab fa-linkedin info-social__media-icon"></i>
+                    Sigueme en Linkedin
+                </div>
+                <div class="info-social__media">
+                    <i class="fab fa-instagram-square info-social__media-icon"></i>
+                    Sigueme en Instagram
+                </div>
+                <div class="info-social__media">
+                    <i class="fab fa-facebook-square info-social__media-icon"></i> 
+                    Sigueme en Facebook
+                </div>
+            </section>
+            <section class="info-contact-container">
+                <h3 class="info-contact__title">Contactame</h3>
+                <div class="info-contact__cellphone">
+                    <i class="fas fa-phone-square-alt info-contact__cellphone-icon"></i>
+                    915136790
+                </div>    
+            </section>
+        </div>
+    </footer>
     <script src="./figuras.js"></script>
 </body>
 </html>

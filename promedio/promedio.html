@@ -1,19 +1,12 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Curso Practico de JavaScript</title>
-    <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://pro.fontawesome.com/releases/v5.15.4/css/all.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer"> 
-    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap" rel="stylesheet">
+    <title>Document</title>
 </head>
-<body class="body">
+<body>
     <header class="header">
         <nav class="header-nav">
             <div class="header-nav__buttom-menu-container" onclick="despliegueMenuList()">
@@ -23,8 +16,8 @@
                     <div class="header-nav__buttom-menu__item" style="--x:1;--y:1;"></div>
                 </button>
             </div>
-            <a class="header-nav__logo-container">
-                <img class="header-nav__logo" src="./recursos/javascript-map-javascript-javascript-icon-with-png-892806.png" alt="Logo de la pagina">
+            <a href="../index.html" class="header-nav__logo-container">
+                <img class="header-nav__logo" src="../recursos/javascript-map-javascript-javascript-icon-with-png-892806.png" alt="Logo de la pagina">
             </a>
             <ul class="header-nav__link-list-close">
                 <li style="--time-delay:1.5s;" class="header-nav__link-element">
@@ -111,80 +104,20 @@
         </nav>  
     </header>
     <main class="main">
-        <section class="main-hero">
-            <h2 class="hero__subtitle">
-                TRABAJO PRÁCTICO - PLATZI
-            </h2>
-            <h1 class="hero__title">
-                Curso Práctico de JavaScript
-            </h1>
-            <p class="hero__pragraph">
-                Aprende desarrollo web con JavaScript. 
-                Practica los fundamentos de la programación 
-                para crear algoritmos que resuelven problemas
-                en la vida real. Analiza problemas, 
-                crea soluciones con JavaScript y expande su 
-                poder integrando HTML. Descubre el potencial 
-                de programar sitios web con JavaScript 
-                con tu profesor JuanDC.
-            </p>
-            <span class="hero__table-title">
-                Temas vistos en el curso:
-            </span>
-           
-            <ul class="hero__table-container">
-                <li class="hero__table-element">
-                    Manipulación del DOM
-                </li>
-                <li class="hero__table-element">
-                    Manipulación de Array
-                </li>
-                <li class="hero__table-element">
-                    Functions
-                </li>
-                <li class="hero__table-element">
-                    HTML y CSS
-                </li>
-                <li class="hero__table-element">
-                    Animaciones y transiciones
-                </li>
-            </ul>
+        <section>
+            <h2>Media Armonica</h2>
+            <form action="" id="CalcularMediaArmonica">
+                <label for="DistanceTraveled">Escribe la distancia recorrida</label>
+                <input type="number" id="DistanceTraveled">
+
+                <label for="DistanceTraveledStop">Escribe la distancia recorrida de cada paro.</label>
+                <input type="number" id="DistanceTraveledStop">
+
+                <label for="">Crear la entrada y pon los valores de las velocidades</label>
+                <button type="button" onclick="createInput()">CreaR las velocidades</button>
+                <button type="button" onclick="resultadoInput()">Resultado</button>
+            </form>
         </section>
     </main>
-    <footer class="footer">
-        <div class="info-container">
-            <section class="info-page-container">
-                <h3 class="info-page__title">
-                    Información del la Página
-                </h3>
-                <p class="info-page__paragraph">
-                    Esta págian contine proyectos realizados en las clases dadas en el Curso Práctico de JavaScript.
-                </p>
-            </section>
-            <section class="info-social-container">
-                <h3 class="info-social__title">Redes Sociales</h3>
-                <div class="info-social__media">
-                    <i class="fab fa-linkedin info-social__media-icon"></i>
-                    Sigueme en Linkedin
-                </div>
-                <div class="info-social__media">
-                    <i class="fab fa-instagram-square info-social__media-icon"></i>
-                    Sigueme en Instagram
-                </div>
-                <div class="info-social__media">
-                    <i class="fab fa-facebook-square info-social__media-icon"></i> 
-                    Sigueme en Facebook
-                </div>
-            </section>
-            <section class="info-contact-container">
-                <h3 class="info-contact__title">Contactame</h3>
-                <div class="info-contact__cellphone">
-                    <i class="fas fa-phone-square-alt info-contact__cellphone-icon"></i>
-                    915136790
-                </div>    
-            </section>
-        </div>
-    </footer>
-    <script src="./script.js"></script>
 </body>
-</html>
+</html>ml

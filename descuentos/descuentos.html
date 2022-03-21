@@ -1,33 +1,235 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Porcentajes y Descuentos</title>
+    <link rel="stylesheet" href="descuentos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://pro.fontawesome.com/releases/v5.15.4/css/all.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer"> 
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap" rel="stylesheet">
 </head>
-<body>
-    <header>
-        <h1>
+<body class="body">
+    <header class="header">
+    <nav class="header-nav">
+        <div class="header-nav__buttom-menu-container" onclick="despliegueMenuList()">
+            <button class="header-nav__buttom-menu">
+                <div class="header-nav__buttom-menu__item" style="--x:1;--y:-1;"></div>
+                <div class="header-nav__buttom-menu__item" style="--x:1;--y:0;"></div>
+                <div class="header-nav__buttom-menu__item" style="--x:1;--y:1;"></div>
+            </button>
+        </div>
+        <a href="../index.html" class="header-nav__logo-container">
+            <img class="header-nav__logo" src="../recursos/javascript-map-javascript-javascript-icon-with-png-892806.png" alt="Logo de la pagina">
+        </a>
+        <ul class="header-nav__link-list-close">
+            <li style="--time-delay:1.5s;" class="header-nav__link-element">
+                <a class="header-nav__link" href="./figuras/figuras.html">
+                    <div class="header-nav__link__icons-container">
+                        <i class="fal fa-triangle header-nav__link__icons"></i>
+                        <i class="fal fa-circle header-nav__link__icons"></i>
+                        <i class="fal fa-square-full header-nav__link__icons"></i>
+                    </div>
+                    <div class="header-nav__link-contents">
+                        <h3 class="header-nav__link__subtitle">
+                            TALLER#1
+                        </h3>
+                        <h2 class="header-nav__link__title">
+                            Figuras Geometricas
+                        </h2>
+                        <p class="header-nav__link__paragraph" >
+                            Calculo básicos para Cuadrados, Triangulos y Circulos.
+                        </p>
+                    </div>
+                </a>
+            </li>
+            <li style="--time-delay:2s;" class="header-nav__link-element">
+                <a class="header-nav__link" href="./descuentos/descuentos.html">
+                    <div class="header-nav__link__icons-container">
+                        <i class="fal fa-user-tag header-nav__link__icons"></i>
+                        <i class="fal fa-badge-dollar header-nav__link__icons"></i>
+                        <i class="fal fa-badge-percent header-nav__link__icons"></i>
+                    </div>
+                    <div class="header-nav__link-contents">
+                        <h3 class="header-nav__link__subtitle">
+                            TALLER#2
+                        </h3>
+                        <h2 class="header-nav__link__title">
+                            Porcentajes y descuentos
+                        </h2>
+                        <p class="header-nav__link__paragraph">
+                            Calculo básicos para precios, descuentos y cupones de pago.
+                        </p>
+                    </div>
+                </a>
+            </li>
+            <li style="--time-delay:2.5s;" class="header-nav__link-element">
+                <a class="header-nav__link" href="./promedio/promedio.html">
+                    <div class="header-nav__link__icons-container">
+                        <i class="fal fa-table header-nav__link__icons"></i>
+                        <i class="fal fa-tachometer-average header-nav__link__icons"></i>
+                        <i class="fal fa-divide header-nav__link__icons"></i>
+                    </div>
+                    <div class="header-nav__link-contents">
+                        <h3 class="header-nav__link__subtitle">
+                            TALLER#3
+                        </h3>
+                        <h2 class="header-nav__link__title">
+                            Media, Moda y Mediana
+                        </h2>
+                        <p class="header-nav__link__paragraph">
+                            Calculos básicos y avanzados.
+                        </p>
+                    </div>
+                </a>
+            </li>
+            <li style="--time-delay:3s;" class="header-nav__link-element">
+                <a class="header-nav__link" href="./salarios/salarios.html">
+                    <div class="header-nav__link__icons-container">
+                        <i class="fas fa-people-carry header-nav__link__icons"></i>
+                        <i class="fal fa-analytics header-nav__link__icons"></i>
+                        <i class="fal fa-sack-dollar header-nav__link__icons"></i>
+                    </div>
+                    <div class="header-nav__link-contents">
+                        <h3 class="header-nav__link__subtitle">
+                            TALLER#4
+                        </h3>
+                        <h2 class="header-nav__link__title">
+                            Análisis Salarial
+                        </h2>
+                        <p class="header-nav__link__paragraph">
+                            Calculo básicos para trabajar con Salarios.
+                        </p>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </nav>  
+    </header>
+    <main class="main">
+        <h1 class="main__tile">
             Porcentajes y descuentos
         </h1>
-        <p>
-            Este es el segundo taller del Curso Practico de JavaScript.
-        </p>
-    </header>
-    <main>
-        <section>
-            <h2>Calcula el precio a pagar de tus productos con descuento</h2>
-            <form action="InputPrice">
-                <label for="">Escribe el precio de tu producto:</label>
-                <input type="number" id="InputPrice">
-                <label for="InputDiscount">Escribe el descuento de tu producto:</label>
-                <input type="number" id="InputDiscount">
-                <button type="button" onclick="onclickButtomPriceDiscount()">Calcular el precio con descuento</button>
-            </form>
-            <p id="PriceP"></p>
+        <section class="descuento-container">
+            <div class="descuento__caluladora1-container">
+                <h2 class="descuento__caluladora-title">Calcula el precio con descuento de tu producto.</h2>
+                <form class="descuento__caluladora-contents">
+                    <label class="caluladora-contents__info-input" for="InputPrice">Escribe el precio de tu producto:</label>
+                    <div class="caluladora-contents__input-contents"> 
+                        <span class="caluladora-contents__input-simbolo caluladora1-contents__input-simbolo">
+                        </span>
+                        <input class="caluladora-contents__input" type="number" id="InputPrice" required="required">
+                        <select class="caluladora-contents__input-select-simbolo caluladora1-contents__input-select-simbolo" >
+                            <option value="Bs.">bolívar</option>
+                            <option value="₵">cedi</option>
+                            <option value="ATS">chelín</option>
+                            <option value="₡">colón</option>
+                            <option value="kr">corona</option>
+                            <option value="د.ك">dinar</option>
+                            <option value="$">dólar</option>
+                            <option value="€">euro</option>
+                            <option value="ƒ">florín</option>
+                            <option value="Fr.">franco</option>
+                            <option value="MK">kuacha</option>
+                            <option value="£">libra</option>
+                            <option value="₤">lira</option>
+                            <option value="N/D">rial</option>
+                            <option value="₽">rublo</option>
+                            <option value="₹">rupia</option>
+                            <option selected="1" value="S/">sol</option>
+                            <option value="₩">won</option>
+                            <option value="￥">yen</option>
+                            <option value="¥">yuan</option>
+                        </select>
+                    </div>
+    
+                    <label class="caluladora-contents__info-imput" for="InputDiscount">Escribe el descuento de tu producto:</label>
+                    <input class="caluladora-contents__input" type="number" id="InputDiscount" required="required">
+    
+                    <button class="caluladora-contents__button" id="ButtonPriceDiscount" type="submit" onclick="onclickButtomPriceDiscount()">Calcular</button>
+                    <p class="caluladora-contents__resultado" id="PriceDiscount"></p>
+                </form>
+            </div>
+            <div class="descuento__caluladora2-container">
+                <h2 class="descuento__caluladora-title">Calcula el precio con cupones de tus productos.</h2>
+                <form class="descuento__caluladora-contents descuento__caluladora-contents-alert">
+                    <label class="caluladora-contents__info-input" for="InputPrecio">Escribe el precio de tu producto:</label>
+                    <div class="caluladora-contents__input-contents">
+                        <span class="caluladora-contents__input-simbolo caluladora2-contents__input-simbolo">
+
+                        </span>
+                        <input class="caluladora-contents__input" type="number" id="InputPrecio" required="required">
+                        <select class="caluladora-contents__input-select-simbolo caluladora2-contents__input-select-simbolo" >
+                            <option value="Bs.">bolívar</option>
+                            <option value="₵">cedi</option>
+                            <option value="ATS">chelín</option>
+                            <option value="₡">colón</option>
+                            <option value="kr">corona</option>
+                            <option value="د.ك">dinar</option>
+                            <option value="$">dólar</option>
+                            <option value="€">euro</option>
+                            <option value="ƒ">florín</option>
+                            <option value="Fr.">franco</option>
+                            <option value="MK">kuacha</option>
+                            <option value="£">libra</option>
+                            <option value="₤">lira</option>
+                            <option value="N/D">rial</option>
+                            <option value="₽">rublo</option>
+                            <option value="₹">rupia</option>
+                            <option selected="1" value="S/">sol</option>
+                            <option value="₩">won</option>
+                            <option value="￥">yen</option>
+                            <option value="¥">yuan</option>
+                        </select>
+                    </div>
+    
+                    <label class="caluladora-contents__info-input" for="InputCupon">Escribe tu cupon:</label>
+                    
+                    <input class="caluladora-contents__input" type="text" id="InputDiscountCupon" required="required" autocomplete="off">
+    
+                    <button class="caluladora-contents__button" id="ButtonPriceDiscountCupon" type="button" onclick="onclickButtomPriceDiscountCupon()">Calcular</button>
+                </form>
+            </div>
         </section>
     </main>
+    <footer class="footer">
+        <div class="info-container">
+            <section class="info-page-container">
+                <h3 class="info-page__title">
+                    Información del la Página
+                </h3>
+                <p class="info-page__paragraph">
+                    Esta págian contine proyectos realizados en las clases dadas en el Curso Práctico de JavaScript.
+                </p>
+            </section>
+            <section class="info-social-container">
+                <h3 class="info-social__title">Redes Sociales</h3>
+                <div class="info-social__media">
+                    <i class="fab fa-linkedin info-social__media-icon"></i>
+                    Sigueme en Linkedin
+                </div>
+                <div class="info-social__media">
+                    <i class="fab fa-instagram-square info-social__media-icon"></i>
+                    Sigueme en Instagram
+                </div>
+                <div class="info-social__media">
+                    <i class="fab fa-facebook-square info-social__media-icon"></i> 
+                    Sigueme en Facebook
+                </div>
+            </section>
+            <section class="info-contact-container">
+                <h3 class="info-contact__title">Contactame</h3>
+                <div class="info-contact__cellphone">
+                    <i class="fas fa-phone-square-alt info-contact__cellphone-icon"></i>
+                    915136790
+                </div>    
+            </section>
+        </div>
+    </footer>
     <script src="./descuentos.js"></script>
 </body>
 </html>

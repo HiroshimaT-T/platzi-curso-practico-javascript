@@ -1,9 +1,52 @@
+//? ------------------------------Evento-Scroll-------------------------------------------------------------------------------
+window.addEventListener('scroll' , function(){
+    const scrollTopheader = document.documentElement.scrollTop
+    const haeder = document.querySelector(".header")
+    if(scrollTopheader === 0){
+        haeder.classList.remove("header--scroll")
+    }else {
+        haeder.classList.add("header--scroll")
+    }
+
+                                                                                                                                             
+})
+// window.onscroll = function() {
+// }
+
+//? ------------------------------Evento-Scroll-------------------------------------------------------------------------------
+
+//? ------------------------------Buttom-------------------------------------------------------------------------------
+const listaMenu = document.querySelector(".header-nav__link-list-close");
+const buttomMenu = document.querySelector(".header-nav__buttom-menu");
+const elementButtomMenu = document.querySelectorAll(".header-nav__buttom-menu__item");
+
+function despliegueMenuList() {
+    listaMenu.classList.toggle("header-nav__link-list-open");
+    elementButtomMenu.forEach((element) => {
+        element.classList.toggle("header-nav__buttom-menu__item-filter");
+    } )
+    buttomMenu.classList.toggle("header-nav__buttom-menu-filter");
+};
+//? ------------------------------Buttom-------------------------------------------------------------------------------
+
 // Forma-Estatica
 // const precio =  100;
 // const descuento = 58;
 // const porcentajeDelPrecioConDescuento = 100 - descuento;
 // const precioConDescuento = (precio * porcentajeDelPrecioConDescuento) / 100;
-
+//? ------------------------------Calculadora-Descuento-------------------------------------------------------------------------------
+const caluladora1ContentsInputSimbolo = document.querySelector(".caluladora1-contents__input-simbolo")
+const caluladora1ContentsInputSimboloSelect = document.querySelector(".caluladora1-contents__input-select-simbolo")
+let caluladora1ContentsInputSimboloSelectValue = String(caluladora1ContentsInputSimboloSelect.value)
+function generation1TextSimbolo (){
+    const caluladora1ContentsInputSimboloSelectValue = String(caluladora1ContentsInputSimboloSelect.value);
+    caluladora1ContentsInputSimbolo.innerText = `${caluladora1ContentsInputSimboloSelectValue}`
+}
+generation1TextSimbolo ();
+caluladora1ContentsInputSimboloSelect.addEventListener('change' , (e)=>{
+    caluladora1ContentsInputSimbolo.innerText = `${e.target.value}`;
+    caluladora1ContentsInputSimboloSelectValue = e.target.value;
+})
 function calcularPrecioConDescuento (precio , descuento){
     const porcentajeDelPrecioConDescuento = 100 - descuento;
     return (precio * porcentajeDelPrecioConDescuento) / 100;
@@ -12,6 +55,9 @@ function calcularPrecioConDescuento (precio , descuento){
 // Forma-Dinamica
 
 function onclickButtomPriceDiscount() {
+    const buttonPriceDiscount = document.getElementById("ButtonPriceDiscount");
+
+
     const InputPreci = document.getElementById("InputPrice");
     const precioValue = Number(InputPreci.value)
 
@@ -19,22 +65,246 @@ function onclickButtomPriceDiscount() {
     const descuentoValue = Number(InputDiscount.value)
     
     const precioConDescuento = calcularPrecioConDescuento (precioValue , descuentoValue);
-    const priceP = document.getElementById("PriceP")
-    // priceP.innerHTML = `El precio con descuento es: $${precioConDescuento}`
-    priceP.innerHTML = "El precio con descuento es: $" + precioConDescuento;
-};
-function paralisis() {
+    const priceDiscount = document.getElementById("PriceDiscount")
+    switch(true) {
+        case precioValue === 0 || descuentoValue === 0 :
+            priceDiscount.innerHTML = "";
+            break;
+        default:
+            // priceP.innerHTML = `El precio con descuento es: $${precioConDescuento}`
+            buttonPriceDiscount.setAttribute("type","button")
+            priceDiscount.innerText = "El precio resultante es: " + caluladora1ContentsInputSimboloSelectValue + precioConDescuento + "." ;
+            priceDiscount.style.display = "flex";
+    }
     
+};
+//? ------------------------------Calculadora-Descuento-------------------------------------------------------------------------------
+//? ------------------------------Calculadora-Descuento-Cupones-------------------------------------------------------------------------------
+const body = document.querySelector(".body")
+const heightHalfViewport = window.innerHeight / 2;
+const listCuponesDesordenado = [
+    {
+        name: "15j224d" ,
+        discount: 12 ,
+    }
+    ,
+    {
+        name: "77f892c" ,
+        discount: 25 ,
+    }
+    ,
+    {
+        name: "229j16s" ,
+        discount: 45 ,
+    }
+    ,
+    {
+        name: "2159q9a" ,
+        discount: 32 ,
+    }
+    ,
+    {
+        name: "3718e8w" ,
+        discount: 11 ,
+    }
+    ,
+    {
+        name: "8761r5d" ,
+        discount: 3 ,
+    }
+    ,
+    {
+        name: "5q4878a" ,
+        discount: 15 ,
+    }
+    ,
+    {
+        name: "607d69x" ,
+        discount: 85 ,
+    }
+    ,
+    {
+        name: "0s9620h" ,
+        discount: 91 ,
+    }
+    ,
+    {
+        name: "264d1f" ,
+        discount: 18 ,
+    }
+    ,
+    {
+        name: "6s8825d" ,
+        discount: 27 ,        
+    }
+    ,
+    {
+        name: "854d16j" ,
+        discount: 81 ,
+    }
+]
+const listCupones = listCuponesDesordenado.sort((a, b)=>{
+    return  b.discount - a.discount
+    
+})
+
+const descuentoCuponCalculadoraBox = document.querySelector(".descuento__caluladora2-container")
+const caluladora2ContentsInputSimbolo = document.querySelector(".caluladora2-contents__input-simbolo")
+const caluladora2ContentsInputSimboloSelect = document.querySelector(".caluladora2-contents__input-select-simbolo")
+let caluladora2ContentsInputSimboloSelectValue = String(caluladora2ContentsInputSimboloSelect.value)
+console.log(caluladora2ContentsInputSimboloSelectValue)
+function generation2TextSimbolo (){
+    const caluladora2ContentsInputSimboloSelectValue = String(caluladora2ContentsInputSimboloSelect.value);
+    caluladora2ContentsInputSimbolo.innerText = `${caluladora2ContentsInputSimboloSelectValue}`
 }
-// RETO
+generation2TextSimbolo ();
+caluladora2ContentsInputSimboloSelect.addEventListener('change' , (e)=>{
+    caluladora2ContentsInputSimbolo.innerText = `${e.target.value}`
+    caluladora2ContentsInputSimboloSelectValue = e.target.value
+})
+function generationListCupones () {
 
-// Analicemos el problema y nuestra propuesta de solución:
+    let containerListCupones = document.createElement("ul")
+    containerListCupones.classList.add("calculadora__cupon-list")
+    descuentoCuponCalculadoraBox.appendChild(containerListCupones)
 
-// Crearemos un array con cada uno de nuestros cupones.
-// Cambiaremos el input de descuento en HTML por un input de cupones.
-// Usaremos un condicional switch para aplicar cierto porcentaje de descuento 
-// en nuestros productos dependiendo del cupón que se haya elegido al presionar 
-// el botón del formulario.
+    containerListCupones.innerHTML = `<li class="calculadora__cupon-list-title"> Lista de Cupones <i class="fas fa-car-battery"></i></li>`
+ 
+    for( let i = 0 ; i < listCupones.length ; i++) {
+        if(i < 3){
+            containerListCupones.innerHTML += `<li class="calculadora__cupon"><span class="calculadora__cupon-ordered">${i+1}°</span> <span class="calculadora__cupon-info">Cupón: "${listCupones[i].name}" </br> Descuento: ${listCupones[i].discount}%</span> <i class="fas calculadora__cupon-icon calculadora__cupon-iconA fa-trophy"></i></li>`
+        }else {
+            containerListCupones.innerHTML += `<li class="calculadora__cupon"><span class="calculadora__cupon-ordered">${i+1}°</span> <span class="calculadora__cupon-info">Cupón: "${listCupones[i].name}" </br> Descuento: ${listCupones[i].discount}%</span> <i class="fas calculadora__cupon-icon calculadora__cupon-iconB  fa-award"></i></li>`
+        }
+    }
+
+} 
+generationListCupones();
+const descuentoCaluladoraContentsAlert = document.querySelector(".descuento__caluladora-contents-alert")
+//? ------------------Alert-Cupon-No-Valid------------------------
+const boxAlertCuponNoValid = document.createElement("div");
+descuentoCaluladoraContentsAlert.appendChild(boxAlertCuponNoValid);
+boxAlertCuponNoValid.classList.add("alert__cupon-container--no-valid");
+
+
+
+//? ------------------Alert-Cupon-No-Valid------------------------
+//? ------------------Alert-Cupon-Valid---------------------------
+
+const boxAlertCuponValid = document.createElement("div");
+descuentoCaluladoraContentsAlert.appendChild(boxAlertCuponValid);
+boxAlertCuponValid.classList.add("alert__cupon-container--valid");
+
+
+//? ------------------Alert-Cupon-Valid---------------------------
+function onclickButtomPriceDiscountCupon() {
+    const buttonPriceDiscountCupon = document.getElementById("ButtonPriceDiscountCupon");
+    
+    const inputPrecio = document.getElementById("InputPrecio");
+    const precioValue = Number(inputPrecio.value) ;
+
+    const inputDiscountCupon = document.getElementById("InputDiscountCupon");
+    const descuentoValue = inputDiscountCupon.value ;
+    
+    //? ------------------Complete-Input-Required---------------------
+    
+    switch(true) {
+        case precioValue === 0 || descuentoValue === 0 :
+            
+            break;
+            default:
+                buttonPriceDiscountCupon.setAttribute("type","button")
+                //? ----------------Validando-Cupon-------------------------------
+                
+                const isCouponValueValid = function(cupon) {
+                    return cupon.name === descuentoValue ;
+                };
+                const userCoupon = listCupones.find(isCouponValueValid);
+                console.log(userCoupon)
+                console.log(!userCoupon)
+                //? ----------------Validando-Cupon-------------------------------
+                //? ------------------Alert-Cupon-No-Valid------------------------
+                
+                boxAlertCuponNoValid.innerHTML = ` <buttom class="alert__cupon-button" onclick="closeAlertCuponNoValid()"><i class="fas fa-times-circle"></i></buttom>
+                <h2 class="alert-cupon__title">Tu cupon <strong>"${descuentoValue}"</strong> no es válido</h2>
+                <p class="alert-cupon__paragraph">Porfavor ingrese el código de tu cupon correctamente</p>`;
+                
+                //? ------------------Alert-Cupon-No-Valid------------------------
+                //? ------------------Mostrando-Resultado---------------------------
+                
+                if (!userCoupon) {
+                    boxAlertCuponNoValid.style.opacity = "1";
+                    boxAlertCuponNoValid.style.pointerEvents = "auto"
+                    boxAlertCuponNoValid.style.transform = "translateX(-50%) translateY(-50%)"
+                
+                }
+                else {
+                    //? ----------------Calculo-Precio-Con-Descuento-Del-Cupon--------
+            
+                    const discountCupon = userCoupon.discount
+                    const priceDiscountCupon = calcularPrecioConDescuento (precioValue , discountCupon)
+            
+                    //? ----------------Calculo-Precio-Con-Descuento-Del-Cupon--------
+                    //? ------------------Alert-Cupon-Valid---------------------------
+                
+                    boxAlertCuponValid.innerHTML = `<buttom class="alert__cupon-button" onclick="closeAlertCuponValid()"><i class="fas fa-times-circle"></i></buttom>
+                    <h2 class="alert-cupon__title">Tu cupon <strong>"${descuentoValue}"</strong> es válido</h2>
+                    <div class="alert-cupon__valores-list-container"> 
+                    <ul class="alert-cupon__valores-list">
+                        <li class="alert-cupon__valores-element">
+                        Precio: ${caluladora2ContentsInputSimboloSelectValue}${precioValue}
+                        </li>
+                        <li class="alert-cupon__valores-element">
+                        Cupón: "${descuentoValue}"
+                        </li>
+                        <li class="alert-cupon__valores-element">
+                        Descuento: ${discountCupon}%
+                        </li>
+                    </ul>
+                    </div>
+                    <p class="alert-cupon__paragraph"> El precio resultante es : ${caluladora2ContentsInputSimboloSelectValue}${priceDiscountCupon}.</p>`;
+                
+                    //? ------------------Alert-Cupon-Valid---------------------------
+                    boxAlertCuponValid.style.opacity = "1";
+                    boxAlertCuponValid.style.pointerEvents = "auto"
+                    boxAlertCuponValid.style.transform = "translateX(-50%) translateY(-50%)"
+
+                }
+                //? ------------------Mostrando-Resultado---------------------------
+
+            };
+            
+            //? ------------------Complete-Input-Required---------------------
+        }
+//? ------------------Close-Alert-Cupon-No-Valid------------------
+
+function closeAlertCuponNoValid() {
+    boxAlertCuponNoValid.style.opacity = "0";
+    boxAlertCuponNoValid.style.transform = "translateX(-50%) translateY(-200%)"
+}
+
+//? ------------------Close-Alert-Cupon-No-Valid------------------
+//? ------------------Close-Alert-Cupon-Valid---------------------
+
+function closeAlertCuponValid() {
+    boxAlertCuponValid.style.opacity = "0";
+    boxAlertCuponValid.style.transform = "translateX(-50%) translateY(-200%)"
+}
+
+//? ------------------Close-Alert-Cupon-Valid---------------------
+//? ------------------------------Calculadora-Descuento-Cupones-------------------------------------------------------------------------------
+        
+        
+        
+        // RETO
+        
+        // Analicemos el problema y nuestra propuesta de solución:
+        
+        // Crearemos un array con cada uno de nuestros cupones.
+        // Cambiaremos el input de descuento en HTML por un input de cupones.
+        // Usaremos un condicional switch para aplicar cierto porcentaje de descuento 
+        // en nuestros productos dependiendo del cupón que se haya elegido al presionar 
+        // el botón del formulario.
 
 // Vamos paso a paso:
 
